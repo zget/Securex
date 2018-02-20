@@ -1,5 +1,7 @@
 package byAJ.Securex.models;
 
+import org.hibernate.validator.constraints.URL;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +14,10 @@ public class Book {
     private int id;
     private String title;
     private String author;
+
+    @URL
     private String image;
+
 
     public int getId() {
         return id;

@@ -10,6 +10,8 @@
     <th:block th:replace="base :: head"></th:block>
 </head>
 <body>
+
+<span th:sec="isAnonymous()">
 <th:block th:replace="base :: nav"></th:block>
 
 <div class="container">
@@ -27,6 +29,7 @@
         </tr>
         <tr th:each="row : ${books}">
             <td></td>
+            <td th:text="${row.image}"></td>
             <td th:text="${row.title}"></td>
             <td th:text="${row.author}"></td>
             <td><a href="#" th:href="@{/books/edit/{bookid} (bookid = ${row.id})}">Update</a> -
@@ -37,5 +40,7 @@
 </div><!-- /.container -->
 
 <th:block th:replace="base :: footlinks"></th:block>
+
+    </span>
 </body>
 </html>
